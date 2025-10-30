@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    #vis.vega-embed {
+      width: 100%;
+      display: flex;
+    }
+
+    #vis.vega-embed details,
+    #vis.vega-embed details summary {
+      position: relative;
+    }
+  </style>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-lite@5.20.1"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+</head>
+<body>
+  <div id="vis"></div>
+  <script>
+    (function(vegaEmbed) {
+      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}}, "data": {"name": "data-92e3fc059e30c41c381e6d2bea118fe7"}, "mark": {"type": "bar", "color": "orange", "cornerRadiusTopLeft": 5, "cornerRadiusTopRight": 5}, "encoding": {"tooltip": [{"field": "Hour", "type": "quantitative"}, {"field": "ID", "type": "quantitative"}], "x": {"axis": {"labelAngle": 0, "labelFontSize": 16, "titleFontSize": 18}, "field": "Hour", "title": "\u5c0f\u65f6", "type": "ordinal"}, "y": {"axis": {"labelFontSize": 16, "titleFontSize": 18}, "field": "ID", "title": "\u4e8b\u6545\u6570\u91cf", "type": "quantitative"}}, "height": 400, "title": {"text": "Houston\u5730\u533a2017\u5e74\u4e8b\u6545\u6570\u91cf\u968f\u5c0f\u65f6\u53d8\u5316", "fontSize": 20}, "width": 600, "$schema": "https://vega.github.io/schema/vega-lite/v5.20.1.json", "datasets": {"data-92e3fc059e30c41c381e6d2bea118fe7": [{"Hour": 0, "ID": 88}, {"Hour": 1, "ID": 65}, {"Hour": 2, "ID": 63}, {"Hour": 3, "ID": 72}, {"Hour": 4, "ID": 354}, {"Hour": 5, "ID": 562}, {"Hour": 6, "ID": 1227}, {"Hour": 7, "ID": 2268}, {"Hour": 8, "ID": 3090}, {"Hour": 9, "ID": 2925}, {"Hour": 10, "ID": 2122}, {"Hour": 11, "ID": 1937}, {"Hour": 12, "ID": 2140}, {"Hour": 13, "ID": 1852}, {"Hour": 14, "ID": 1644}, {"Hour": 15, "ID": 1992}, {"Hour": 16, "ID": 1559}, {"Hour": 17, "ID": 1787}, {"Hour": 18, "ID": 1358}, {"Hour": 19, "ID": 1030}, {"Hour": 20, "ID": 872}, {"Hour": 21, "ID": 606}, {"Hour": 22, "ID": 515}, {"Hour": 23, "ID": 175}]}};
+      var embedOpt = {"mode": "vega-lite"};
+
+      function showError(el, error){
+          el.innerHTML = ('<div style="color:red;">'
+                          + '<p>JavaScript Error: ' + error.message + '</p>'
+                          + "<p>This usually means there's a typo in your chart specification. "
+                          + "See the javascript console for the full traceback.</p>"
+                          + '</div>');
+          throw error;
+      }
+      const el = document.getElementById('vis');
+      vegaEmbed("#vis", spec, embedOpt)
+        .catch(error => showError(el, error));
+    })(vegaEmbed);
+
+  </script>
+</body>
+</html>

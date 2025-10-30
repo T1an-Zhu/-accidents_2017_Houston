@@ -1,0 +1,13 @@
+streamlit
+pandas
+numpy
+scikit-learn
+matplotlib
+joblib
+folium 
+altair 
+tabulate 
+requests
+sentence-transformers
+streamlit-folium
+huggingface_hub

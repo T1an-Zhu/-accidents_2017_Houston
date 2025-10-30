@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    #vis.vega-embed {
+      width: 100%;
+      display: flex;
+    }
+
+    #vis.vega-embed details,
+    #vis.vega-embed details summary {
+      position: relative;
+    }
+  </style>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-lite@5.20.1"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+</head>
+<body>
+  <div id="vis"></div>
+  <script>
+    (function(vegaEmbed) {
+      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}}, "data": {"name": "data-e047731f9a511b93a9283116029a60d9"}, "mark": {"type": "bar", "color": "seagreen", "cornerRadiusTopLeft": 5, "cornerRadiusTopRight": 5}, "encoding": {"tooltip": [{"field": "Weekday", "type": "nominal"}, {"field": "ID", "type": "quantitative"}], "x": {"axis": {"labelFontSize": 16, "titleFontSize": 18}, "field": "Weekday", "sort": ["\u5468\u4e00", "\u5468\u4e8c", "\u5468\u4e09", "\u5468\u56db", "\u5468\u4e94", "\u5468\u516d", "\u5468\u65e5"], "title": "\u661f\u671f", "type": "ordinal"}, "y": {"axis": {"labelFontSize": 16, "titleFontSize": 18}, "field": "ID", "title": "\u4e8b\u6545\u6570\u91cf", "type": "quantitative"}}, "height": 400, "title": {"text": "Houston\u5730\u533a2017\u5e74\u4e8b\u6545\u6570\u91cf\u968f\u661f\u671f\u53d8\u5316", "fontSize": 20}, "width": 600, "$schema": "https://vega.github.io/schema/vega-lite/v5.20.1.json", "datasets": {"data-e047731f9a511b93a9283116029a60d9": [{"Weekday": "\u5468\u4e00", "ID": 5295}, {"Weekday": "\u5468\u4e8c", "ID": 5472}, {"Weekday": "\u5468\u4e09", "ID": 5713}, {"Weekday": "\u5468\u56db", "ID": 5426}, {"Weekday": "\u5468\u4e94", "ID": 5284}, {"Weekday": "\u5468\u516d", "ID": 1624}, {"Weekday": "\u5468\u65e5", "ID": 1489}]}};
+      var embedOpt = {"mode": "vega-lite"};
+
+      function showError(el, error){
+          el.innerHTML = ('<div style="color:red;">'
+                          + '<p>JavaScript Error: ' + error.message + '</p>'
+                          + "<p>This usually means there's a typo in your chart specification. "
+                          + "See the javascript console for the full traceback.</p>"
+                          + '</div>');
+          throw error;
+      }
+      const el = document.getElementById('vis');
+      vegaEmbed("#vis", spec, embedOpt)
+        .catch(error => showError(el, error));
+    })(vegaEmbed);
+
+  </script>
+</body>
+</html>
